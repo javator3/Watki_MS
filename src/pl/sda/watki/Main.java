@@ -26,7 +26,7 @@ class Runner implements Runnable{
         Scanner scan = new Scanner(System.in);
         System.out.println("Podaj liczbę: ");
         int x = scan.nextInt();
-        System.out.println( " Thread: " +  Thread.currentThread().getName() + " liczba * 2 " + jakisInt(x));
+        System.out.println( " Thread: " +  Thread.currentThread().getName() + " liczba * 2 = " + jakisInt(x));
 
     }
 }
@@ -78,6 +78,16 @@ public class Main {
 
         Thread thread11 = new Thread(new Runner());
         thread11.start();
+
+
+        try {
+            Thread.sleep(10);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        Runnerexample2 runnerExampleD = new Runnerexample2();
+        runnerExampleD.start();
 
     }
 }
